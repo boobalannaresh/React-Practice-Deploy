@@ -37,18 +37,18 @@ export function MovieList() {
     <div>
       <div className="movie-list">
         {movie.map((store) => (
-          <div key={store.id}>
+          <div key={store._id}>
 
             <Movie
               movieTake={store}
-              id={store.id}
+              id={store._id}
 
               deleteButton={
                 <IconButton
                 sx={{marginLeft:"auto"}}
                   aria-label="delete"
                   color="error"
-                  onClick={() => deleteMovie(store.id)}
+                  onClick={() => deleteMovie(store._id)}
                 >
                   <DeleteIcon  />
                 </IconButton>
@@ -59,7 +59,7 @@ export function MovieList() {
                 sx={{marginLeft:"auto"}}
                   aria-label="edit"
                   color="secondary" 
-                  onClick={()=> navigate(`/movies/edit/${store.id}`)}
+                  onClick={()=> navigate(`/movies/edit/${store._id}`)}
                 >
                   <EditIcon />
                 </IconButton>
